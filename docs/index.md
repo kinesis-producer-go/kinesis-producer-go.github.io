@@ -1,5 +1,6 @@
 ---
-title: kinesis-producer
+title: KPL-compatible Kinesis producer for Go
+titleTemplate: kinesis-producer
 description: A KPL-like batch producer for Amazon Kinesis, built on the AWS SDK for Go V2, using the same aggregation format as the KPL.
 layout: home
 
