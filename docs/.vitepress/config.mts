@@ -19,6 +19,8 @@ export default defineConfig({
   },
 
   head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/logo.png' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:site_name', content: 'kinesis-producer' }],
     // meta keywords has ~no effect on Google ranking (Google confirmed this
@@ -49,9 +51,16 @@ export default defineConfig({
       ['meta', { property: 'og:url', content: canonicalUrl }],
       ['meta', { property: 'og:title', content: title }],
       ['meta', { property: 'og:description', content: description }],
-      ['meta', { name: 'twitter:card', content: 'summary' }],
+      ['meta', { property: 'og:image', content: `${site}/social-preview.png` }],
+      ['meta', { property: 'og:image:type', content: 'image/png' }],
+      ['meta', { property: 'og:image:width', content: '1280' }],
+      ['meta', { property: 'og:image:height', content: '640' }],
+      ['meta', { property: 'og:image:alt', content: 'kinesis-producer — KPL-compatible batching for Amazon Kinesis in Go' }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
       ['meta', { name: 'twitter:title', content: title }],
       ['meta', { name: 'twitter:description', content: description }],
+      ['meta', { name: 'twitter:image', content: `${site}/social-preview.png` }],
+      ['meta', { name: 'twitter:image:alt', content: 'kinesis-producer — KPL-compatible batching for Amazon Kinesis in Go' }],
     )
 
     // Structured data (JSON-LD) so Google can associate the site with the
@@ -67,6 +76,7 @@ export default defineConfig({
           description:
             'A KPL-like batch producer for Amazon Kinesis, built on the AWS SDK for Go V2, using the same aggregation format as the KPL.',
           url: `${site}/`,
+          image: `${site}/social-preview.png`,
           codeRepository: 'https://github.com/kinesis-producer-go/kinesis-producer',
           programmingLanguage: 'Go',
           license: 'https://github.com/kinesis-producer-go/kinesis-producer/blob/main/LICENSE',
@@ -76,6 +86,8 @@ export default defineConfig({
   },
 
   themeConfig: {
+    logo: { src: '/logo.svg', alt: 'kinesis-producer' },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Usage', link: '/usage' },

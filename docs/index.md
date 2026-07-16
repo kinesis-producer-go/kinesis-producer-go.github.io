@@ -8,6 +8,9 @@ hero:
   name: kinesis-producer
   text: A KPL-like batch producer for Amazon Kinesis
   tagline: Built on the official AWS SDK for Go V2, using the same aggregation format the KPL uses.
+  image:
+    src: /logo.svg
+    alt: kinesis-producer aggregation logo
   actions:
     - theme: brand
       text: Usage
