@@ -91,6 +91,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Usage', link: '/usage' },
+      { text: 'CBOR + gzip', link: '/cbor-gzip' },
       { text: 'Aggregation Format', link: '/aggregation-format' },
       { text: 'GoDoc', link: 'https://pkg.go.dev/github.com/kinesis-producer-go/kinesis-producer' },
     ],
@@ -101,6 +102,7 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/' },
           { text: 'Usage', link: '/usage' },
+          { text: 'CBOR + gzip transport', link: '/cbor-gzip' },
           { text: 'Aggregation Format', link: '/aggregation-format' },
         ],
       },

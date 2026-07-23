@@ -27,6 +27,10 @@ features:
     details: Packs multiple user records into a single Kinesis record using the same protobuf aggregation format as the Amazon KPL, so consumers using KCL deaggregation work unmodified.
   - title: AWS SDK for Go V2
     details: Built directly on aws-sdk-go-v2, no JVM/KPL daemon or CGo dependency to run alongside your Go process.
+  - title: Optional CBOR + gzip transport
+    details: Use the project-maintained Kinesis client fork to avoid JSON base64 expansion and gzip eligible PutRecords request bodies without changing application imports.
+    link: /cbor-gzip
+    linkText: Configure the optimized transport
   - title: Batching & backpressure built in
     details: Configurable batch size/count, flush interval, backlog capacity, and concurrent PutRecords connections, with automatic retry and backoff on transient failures.
   - title: Pluggable logging
@@ -90,4 +94,6 @@ func main() {
 }
 ```
 
-See [Usage](/usage) for the full `producer.Config` reference and logger adapters, or [Aggregation Format](/aggregation-format) for the on-wire record layout.
+See [Usage](/usage) for the full `producer.Config` reference and logger adapters,
+[CBOR + gzip transport](/cbor-gzip) for the optional optimized Kinesis client,
+or [Aggregation Format](/aggregation-format) for the on-wire record layout.

@@ -11,6 +11,26 @@ description: producer.Config reference, logger adapters, and failure handling fo
 go get github.com/kinesis-producer-go/kinesis-producer
 ```
 
+### Optional CBOR + gzip Kinesis client
+
+The producer's `Client` field accepts the standard AWS SDK Kinesis client
+interface. To keep the same imports while using the project-maintained
+RPC v2 CBOR and gzip-enabled client, add this module replacement:
+
+```sh
+go mod edit --replace \
+  github.com/aws/aws-sdk-go-v2/service/kinesis=github.com/kinesis-producer-go/aws-sdk-go-v2/service/kinesis@kinesis-rpcv2-cbor-gzip
+go mod tidy
+```
+
+The first command uses the branch as a version query. `go mod tidy` resolves
+its current tip to an immutable pseudo-version in `go.mod`; run both commands
+again whenever you intentionally want to refresh to a newer branch tip.
+Application imports and client construction remain unchanged.
+
+See [CBOR + gzip transport](/cbor-gzip) for the improvements, defaults,
+operational scope, and rollback command.
+
 ## Creating a producer
 
 ```go
